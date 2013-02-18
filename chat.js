@@ -16,7 +16,7 @@ function handler(req, res) {
 var userSockets={};
 io.sockets.on('connection', function (socket) {
     socket.on('addme', function (username) {
-        socket.set()
+        console.log("user:"+username+" coming");
         socket.username = username;
         socket.emit('chat', 'SERVER', 'You have connected');
         socket.broadcast.emit('chat', 'SERVER', username + ' is on deck');
